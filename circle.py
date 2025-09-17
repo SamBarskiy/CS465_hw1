@@ -17,8 +17,8 @@ class TurtleController(Node):
         return msg
 
     def get_twist_msg(self):
-        turn_speed = 6.3
-        #Starts with a 45 degree turn
+        turn_speed = 6.3 # This turn speed for 2 seconds lands the turtle in approximately the starting location
+        # Equivalent turn and move speed moves the turtle in a circular shape
         if self.time < 2:
             msg = self.create_twist(turn_speed, turn_speed)
         else:
