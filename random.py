@@ -1,4 +1,4 @@
- import rclpy
+import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
 
@@ -17,6 +17,8 @@ class TurtleController(Node):
         return msg
     def get_twist_msg(self):
         turn_speed = 1.568 # This turn speed allows approximately 90 degree angles when done for 5 seconds
+        # Makes a squircle (square circle)
+        # Does this by moving forward at the same speed as angular speed during turns
         if self.time < 5:
             msg = self.create_twist(1.0, 0.0)
         elif self.time >= 5 and self.time < 7:
